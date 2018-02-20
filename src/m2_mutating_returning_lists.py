@@ -38,7 +38,7 @@ def main():
 def run_test_doubler():
     """ Tests the    doubler    function. """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # done: 2. Implement this TEST function.
     #   It TESTS the  doubler  function defined below.
     #   Include at least ** 1 ** ADDITIONAL test beyond those we wrote.
     #
@@ -64,6 +64,28 @@ def run_test_doubler():
     correct_arg1_after = [20, -6, 40, 8]
     correct_arg2_after = [5, 0, 8]
     expected = [10, 0, 16]
+
+    print()
+    print('BEFORE the function call:')
+    print('  Argument 1 is:', arg1)
+    print('  Argument 2 is:', arg2)
+
+    answer = doubler(arg1, arg2)
+
+    print('AFTER the function call:')
+    print('  Argument 1 is:       ', arg1)
+    print('  Argument 1 should be:', correct_arg1_after)
+    print('  Argument 2 is:       ', arg2)
+    print('  Argument 2 should be:', correct_arg2_after)
+    print('The returned value is:       ', answer)
+    print('The returned value should be:', expected)
+
+    # Test 2
+    arg1 = [34, 3, -9, 2]
+    arg2 = [12, 4, 5]
+    correct_arg1_after = [68, 6, -18, 4]
+    correct_arg2_after = [12, 4, 5]
+    expected = [24, 8, 10]
 
     print()
     print('BEFORE the function call:')

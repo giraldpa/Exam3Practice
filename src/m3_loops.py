@@ -46,7 +46,7 @@ def main():
 def run_test_practice_problem3():
     """ Tests the   practice_problem3  function. """
     ####################################################################
-    # TODO: 2. Implement this TEST function.
+    # done: 2. Implement this TEST function.
     #   It TESTS the  practice_problem3  function defined below.
     #   Include at least ** 2 ** ADDITIONAL tests beyond those we wrote.
     #
@@ -110,6 +110,18 @@ def run_test_practice_problem3():
              st.SimpleTestCase(practice_problem3,
                                [0, 1, 1.414213562373],
                                [286602]),
+
+             # My two tests
+             st.SimpleTestCase(practice_problem3,
+                               [34, 7, 1.21],
+                               [38, 39, 45, 51, 57, 64, 70]),
+             st.SimpleTestCase(practice_problem3,
+                               [10, 31, 1.45],
+                               [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
+                                22, 23, 24, 25, 26, 27, 28, 29, 30, 11, 12, 13,
+                                14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25,
+                                26, 27, 28, 29, 30]
+                               ),
              ]
     # 14th test:
     big_list = []

@@ -39,7 +39,7 @@ def main():
 def run_test_integers():
     """ Tests the    integers    function. """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # done: 2. Implement this TEST function.
     #   It TESTS the  integers  function defined below.
     #   Include at least ** 1 ** ADDITIONAL test beyond those we wrote.
     #
@@ -68,6 +68,19 @@ def run_test_integers():
                        ['oops'],
                        [[55], [44]],
                        [30, -4]
+                       ])
+    print('Expected is:', expected)
+    print('Actual is:  ', answer)
+
+    # Test 2:
+    expected = [6, 9, 1, 2, 150, 9, 3, 4]
+    answer = integers([(6, 9, 'yo'),
+                       (1, 2, 150),
+                       ['hey', 6.8, 'key', 9],
+                       'hello',
+                       [],
+                       [[88], [77, 90]],
+                       [3, 4]
                        ])
     print('Expected is:', expected)
     print('Actual is:  ', answer)
@@ -131,7 +144,7 @@ def integers(sequence_of_sequences):
 def run_test_big_letters():
     """ Tests the    big_letters    function. """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement this TEST function.
+    # done: 4. Implement this TEST function.
     #   It TESTS the  big_letters  function defined below.
     #   Include at least ** 1 ** ADDITIONAL test beyond those we wrote.
     # ------------------------------------------------------------------
