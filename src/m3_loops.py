@@ -5,8 +5,8 @@ This problem provides practice at:
   ***  FOR and WHILE loops.  ***
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Pattie Giraldo.
+"""  # done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ########################################################################
 # Students:
@@ -35,6 +35,7 @@ import math
 def main():
     """ Calls the   TEST   functions in this module. """
     run_test_practice_problem3()
+
 
 # ----------------------------------------------------------------------
 # Students: Some of the testing code below uses SimpleTestCase objects,
@@ -208,7 +209,7 @@ def practice_problem3(start, n, threshold):
       :type threshold: float
     """
     ####################################################################
-    # TODO: 3. Implement and test this function.
+    # done: 3. Implement and test this function.
     #          Some tests are already written for you (above),
     #          but you are required to write ADDITIONAL tests (above).
     ####################################################################
@@ -216,6 +217,17 @@ def practice_problem3(start, n, threshold):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   < 15 minutes.
     ####################################################################
+    new_list = []
+    while len(new_list) < n:
+        if n == 0:
+            return []
+        if threshold > math.sqrt(2):
+            for k in range(start, n):
+                new_list = new_list + [k]
+        if math.sin(start) + math.cos(start) > threshold:
+            new_list = new_list + [start]
+        start = start + 1
+    return new_list
 
 
 # ----------------------------------------------------------------------

@@ -101,6 +101,41 @@ def hourglass(window, n, point, radius, color):
     #    DIFFICULTY:      8
     #    TIME ESTIMATE:  25 minutes (warning: this problem is challenging)
     # ------------------------------------------------------------------
+    circle = rg.Circle(point, radius)
+    x_org = circle.center.x
+
+    y_up = circle.center.y
+    y_down = circle.center.y
+
+    for k in range(n):
+        x_up = x_org - radius * k
+        x_down = x_org - radius * k
+
+        for j in range(k + 1):
+            circle_up = rg.Circle(rg.Point(x_up, y_up), radius)
+            circle_up.fill_color = color
+            circle_up.attach_to(window)
+
+            line_up = rg.Line(rg.Point(x_up - radius, y_up), rg.Point(
+                x_up + radius, y_up))
+            line_up.attach_to(window)
+
+            circle_down = rg.Circle(rg.Point(x_down, y_down), radius)
+            circle_down.fill_color = color
+            circle_down.attach_to(window)
+
+            line_low = rg.Line(rg.Point(x_down - radius, y_down), rg.Point(
+                x_down + radius,
+                y_down))
+            line_low.attach_to(window)
+
+            x_down = x_down + 2 * radius
+            x_up = x_up + 2 * radius
+
+        y_up = y_up - radius * 1.75
+        y_down = y_down + radius * 1.75
+
+    window.render()
 
 
 def run_test_many_hourglasses():
@@ -179,6 +214,27 @@ def many_hourglasses(window, square, m, colors):
     #                         a correct "hourglass" function above)
     #    TIME ESTIMATE:  20 minutes (warning: this problem is challenging)
     # ------------------------------------------------------------------
+    radius = square.length_of_each_side / 2
+    center = square.center
+    glass_center = square.center
+    square.attach_to(window)
+    corner1 = rg.Point(center.x - radius, center.y - radius)
+    corner2 = rg.Point(center.x + radius, center.y + radius)
+
+    for k in range(m):
+        rectangle = rg.Rectangle(corner1, corner2)
+        rectangle.attach_to(window)
+
+        corner1 = rg.Point(corner1.x + (2 + k * 2) * radius,
+                           corner1.y - 1.75 * radius)
+        corner2 = rg.Point(corner2.x + (4 + k * 2) * radius,
+                           corner2.y + 1.75 * radius)
+
+    for k in range(m):
+        hourglass(window, k + 1, glass_center, radius, colors[k % len(colors)])
+
+        glass_center = rg.Point(glass_center.x + (3 + k * 2) * radius,
+                                glass_center.y)
 
 
 # ----------------------------------------------------------------------
